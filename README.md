@@ -1,3 +1,12 @@
+# Deploying a Multitenant Application 
+
+## Prereq
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
+- [k3d](https://k3d.io/v5.5.1/)
+- [Docker](https://docs.docker.com/engine/install/)
+
+![Alt text](flow.png)
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
