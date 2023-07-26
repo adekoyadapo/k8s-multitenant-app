@@ -7,6 +7,25 @@
 
 ![Alt text](flow.png)
 
+## Deployment
+
+Create `terraform.tfvars` and add inputs similar to;
+```
+cluster_name     = "multi-tenant"
+app_domain       = "10-0-10-10.sslip.io"
+kube_config_file = "~/.kube/config"
+docker-sock      = "unix:///var/run/docker.sock"
+app_name         = "app1"
+image_tag        = "v2"
+tenants          = ["tenant-a", "tenant-b", "tenant-c"]
+container_port   = 3000
+```
+The run;
+```
+terraform init
+terraform plan
+terraform apply -auto-approve
+```
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

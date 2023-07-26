@@ -40,6 +40,8 @@ spec:
           env:
             - name: TENANT_NAME
               value: "{{ .Values.tenantName }}"
+            - name: PORT
+              value: "{{ .Values.service.port }}"
           livenessProbe:
             httpGet:
               path: /

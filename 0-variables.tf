@@ -7,7 +7,7 @@ variable "cluster_name" {
 variable "app_domain" {
   type        = string
   description = "Domain or subdomain for the APP"
-  default = "example.local"
+  default     = "example.local"
 }
 
 variable "kube_config_file" {
