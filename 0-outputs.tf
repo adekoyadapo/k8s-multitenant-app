@@ -1,4 +1,4 @@
-output "tenant-ingresses" {
-  description = "FQDN for the tenants"
-  value       = { for i in toset(var.tenants) : i => "${i}.${var.app_domain}" }
+output "endpoints" {
+  description = "Tenant FQDN"
+  value       = { for i, j in data.template_file.tenant : i => "${i}.${j.vars.app_domain}" }
 }

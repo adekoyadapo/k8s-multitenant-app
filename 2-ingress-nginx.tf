@@ -1,5 +1,5 @@
 resource "helm_release" "ingress" {
-  depends_on = [terraform_data.local]
+  depends_on = [k3d_cluster.k3d]
   name       = "nginx"
 
   repository       = "https://kubernetes.github.io/ingress-nginx"
@@ -10,8 +10,8 @@ resource "helm_release" "ingress" {
   values           = [file("values/ingress-nginx.yaml")]
 }
 
-resource "time_sleep" "wait_for_ingress" {
-  create_duration = "50s"
+# resource "time_sleep" "wait_for_ingress" {
+#   create_duration = "50s"
 
-  depends_on = [helm_release.ingress]
-}
+#   depends_on = [helm_release.ingress]
+# }

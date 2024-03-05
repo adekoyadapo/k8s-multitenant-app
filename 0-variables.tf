@@ -4,28 +4,16 @@ variable "cluster_name" {
   default     = "demo"
 }
 
-variable "app_domain" {
+variable "cluster_image" {
   type        = string
-  description = "Domain or subdomain for the APP"
-  default     = "example.local"
-}
-
-variable "kube_config_file" {
-  type        = string
-  description = "Kube config file location"
-  default     = "~/.kube/config"
+  description = "Cluster iamge"
+  default     = "rancher/k3s:v1.27.4-k3s1"
 }
 
 variable "app_name" {
   type        = string
   description = "application name"
   default     = "pyapp"
-}
-
-variable "image_tag" {
-  type        = string
-  description = "docker image tag"
-  default     = "v1"
 }
 
 variable "docker-sock" {
